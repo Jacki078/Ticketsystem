@@ -9,12 +9,13 @@ import javax.swing.JButton;
 import javax.swing.JSeparator;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JPasswordField;
 
 public class Login_S {
 
 	private JFrame frmTicketsystemLogin;
 	private JTextField textID;
-	private JTextField txtPasswort;
+	private JPasswordField passwordField;
 
 	/**
 	 * Launch the application.
@@ -66,11 +67,6 @@ public class Login_S {
 		frmTicketsystemLogin.getContentPane().add(textID);
 		textID.setColumns(10);
 		
-		txtPasswort = new JTextField();
-		txtPasswort.setBounds(97, 92, 210, 20);
-		frmTicketsystemLogin.getContentPane().add(txtPasswort);
-		txtPasswort.setColumns(10);
-		
 		JButton btnEinloggen = new JButton("Einloggen");
 		btnEinloggen.addActionListener(new ActionListener() {
 			
@@ -95,5 +91,9 @@ public class Login_S {
 		});
 		btnExit.setBounds(218, 138, 89, 23);
 		frmTicketsystemLogin.getContentPane().add(btnExit);
+		
+		passwordField = new JPasswordField();
+		passwordField.setBounds(97, 92, 210, 20);
+		frmTicketsystemLogin.getContentPane().add(passwordField);
 	}
 }
