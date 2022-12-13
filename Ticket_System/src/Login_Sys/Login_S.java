@@ -11,11 +11,13 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JPasswordField;
 
-public class Login_S {
+public class Login_S implements ActionListener {
 
 	private JFrame frmTicketsystemLogin;
 	private JTextField textID;
 	private JPasswordField passwordField;
+	
+	JButton btnExit, btnEinloggen; 
 
 	/**
 	 * Launch the application.
@@ -43,7 +45,7 @@ public class Login_S {
 	/**
 	 * Initialize the contents of the frame.
 	 */
-	private void initialize() {
+	public void initialize() {
 		frmTicketsystemLogin = new JFrame();
 		frmTicketsystemLogin.setTitle("Ticket-System Login");
 		frmTicketsystemLogin.setBounds(200, 200, 345, 224);
@@ -67,13 +69,9 @@ public class Login_S {
 		frmTicketsystemLogin.getContentPane().add(textID);
 		textID.setColumns(10);
 		
-		JButton btnEinloggen = new JButton("Einloggen");
-		btnEinloggen.addActionListener(new ActionListener() {
-			
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
+		btnEinloggen = new JButton("Einloggen");
 		btnEinloggen.setBounds(97, 138, 89, 23);
+		btnEinloggen.addActionListener(this);
 		frmTicketsystemLogin.getContentPane().add(btnEinloggen);
 		
 		JSeparator separator = new JSeparator();
@@ -84,16 +82,32 @@ public class Login_S {
 		separator_1.setBounds(10, 45, 297, 2);
 		frmTicketsystemLogin.getContentPane().add(separator_1);
 		
-		JButton btnExit = new JButton("Exit");
-		btnExit.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
+		btnExit = new JButton("Exit");
 		btnExit.setBounds(218, 138, 89, 23);
+		btnExit.addActionListener(this);
 		frmTicketsystemLogin.getContentPane().add(btnExit);
 		
 		passwordField = new JPasswordField();
 		passwordField.setBounds(97, 92, 210, 20);
 		frmTicketsystemLogin.getContentPane().add(passwordField);
+		
+		
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		if (e.getSource() == btnExit) {
+			System.exit(0);
+		}
+
+		if(e.getSource() == btnEinloggen) {
+			
+			
+		}
+		;
+		
+		
+		
 	}
 }
